@@ -1,6 +1,6 @@
-import type { Todo } from '../types/todo';
+import type { Todo } from "../types/todo";
 
-const seedEntries = ['Read the AGENT spec', 'Sketch the UI', 'Ship the Todo app'];
+const seedEntries = ["Create your own todos", "Delete me!"];
 
 let nextId = 1;
 const createId = () => `todo-${nextId++}`;
@@ -9,7 +9,7 @@ let todos: Todo[] = seedEntries.map((text, index) => ({
   id: createId(),
   text,
   completed: index === seedEntries.length - 1,
-  createdAt: Date.now() - index * 1000
+  createdAt: Date.now() - index * 1000,
 }));
 
 const clean = (text: string): string => text.trim();
@@ -27,13 +27,16 @@ export const addTodo = async (rawText: string): Promise<void> => {
       id: createId(),
       text,
       completed: false,
-      createdAt: Date.now()
+      createdAt: Date.now(),
     },
-    ...todos
+    ...todos,
   ];
 };
 
-export const updateTodoText = async (id: string, rawText: string): Promise<void> => {
+export const updateTodoText = async (
+  id: string,
+  rawText: string
+): Promise<void> => {
   const text = clean(rawText);
   if (!text) return;
 
