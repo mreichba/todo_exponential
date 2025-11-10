@@ -30,3 +30,7 @@ Deploy the repo to Vercel (`vercel deploy`) and share the live URL here once rea
 - Todos persist only for the current server session per the spec.
 - Styling sticks to Tailwind primitives (no shadcn/shimmer) to keep the code readable.
 - Mutations flow through the `/api/todos` route, and client helpers in `app/actions.ts` call into it.
+
+## Shortcuts
+
+- Utilization of VSCode with Codex
